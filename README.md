@@ -1,12 +1,144 @@
-# React + Vite
+# 🎥 Video to GIF Converter with Giphy Integration
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Convert your videos into high-quality GIFs **directly in the browser** using [FFmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm).
+Add custom text overlays, download locally, or upload your GIFs to **Giphy** and share them instantly. 🚀
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+* 🎞️ Upload any video (MP4, WebM, etc.)
+* ⚡ Convert to GIF fully client-side (no server needed)
+* 📝 Add custom text captions
+* 💾 Download your GIF locally
+* 🌐 Upload directly to **Giphy** via their API
+* 📋 Copy the Giphy share link with one click
+* 🌙 Light/Dark mode support
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+* [React + Vite](https://vitejs.dev/) ⚛️
+* [FFmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm) 🎬
+* [Tailwind CSS](https://tailwindcss.com/) 🎨
+* [FileSaver.js](https://github.com/eligrey/FileSaver.js/) 💾
+* [Giphy Upload API](https://developers.giphy.com/docs/api/endpoint#upload) 🎉
+
+---
+
+## 📦 Installation
+
+Clone the repo:
+
+```bash
+git clone https://github.com/your-username/video-gif-converter.git
+cd video-gif-converter
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+---
+
+## 🔑 Environment Variables
+
+Create a `.env` file in the root:
+
+```
+VITE_GIPHY_API=your_giphy_api_key_here
+```
+
+* Get your free API key from [Giphy Developers](https://developers.giphy.com/).
+* Keys must be prefixed with `VITE_` to be exposed to the client.
+
+---
+
+## 🚀 Deployment
+
+This app is designed for **Vercel** or **Netlify**.
+
+### Important (FFmpeg.wasm):
+
+You must set headers to enable `SharedArrayBuffer`:
+
+For **Vercel**, create a `vercel.json` file:
+
+```json
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" },
+        { "key": "Cross-Origin-Embedder-Policy", "value": "require-corp" }
+      ]
+    }
+  ]
+}
+```
+
+For **Netlify**, create a `_headers` file in `public/`:
+
+```
+/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+```
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+ ├── components/
+ │    └── Navbar.jsx
+ ├── VideoShow.jsx   # main conversion logic
+ ├── App.jsx
+ ├── main.jsx
+public/
+ ├── font.ttf        # custom font for GIF text
+ └── _headers / vercel.json (for deployment)
+```
+
+---
+
+## 🖼️ Demo (Screenshots)
+
+* Upload video UI
+* Conversion form with text input
+* Copy link button with Giphy integration
+
+*(Add screenshots here if possible)*
+
+---
+
+## 🧩 Future Improvements
+
+* 🔊 Support audio → GIF with sound as MP4 export
+* 🎨 More advanced text styling (color, position, animations)
+* 🗂️ User galleries (Firebase / Supabase integration)
+* 🌐 Social share buttons
+
+---
+
+## 📜 License
+
+MIT License © 2025 [Your Name]
+Feel free to use, modify, and share. 🎉
