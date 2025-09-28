@@ -172,8 +172,8 @@ function VideoShow({mode, setmode}) {
   const gifId = data.data.id
   const giphyUrl = `https://giphy.com/gifs/${gifId}`
 
-  await navigator.clipboard.writeText(giphyUrl)
   setCopy(true)
+  await navigator.clipboard.writeText(giphyUrl)
 }  else {
         console.error('Upload failed:', data)
         alert('Upload failed: ' + (data.meta.msg || 'Unknown error'))
