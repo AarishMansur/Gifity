@@ -119,26 +119,16 @@ public/
 
 ---
 
-## 🖼️ Demo (Screenshots)
-
-* Upload video UI
-* Conversion form with text input
-* Copy link button with Giphy integration
-
-*(Add screenshots here if possible)*
-
----
 
 ## 🧩 Future Improvements
 
 * 🔊 Support audio → GIF with sound as MP4 export
 * 🎨 More advanced text styling (color, position, animations)
-* 🗂️ User galleries (Firebase / Supabase integration)
 * 🌐 Social share buttons
 
 ---
 
 ## 📜 License
 
-MIT License © 2025 [Your Name]
+MIT License © 2025 Aarish Mansur
 Feel free to use, modify, and share. 🎉
